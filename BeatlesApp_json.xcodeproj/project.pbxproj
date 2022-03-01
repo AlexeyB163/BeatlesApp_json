@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		CE7463E027CB69AE000634C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7463DF27CB69AE000634C8 /* AppDelegate.swift */; };
 		CE7463E227CB69AE000634C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7463E127CB69AE000634C8 /* SceneDelegate.swift */; };
-		CE7463E427CB69AE000634C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7463E327CB69AE000634C8 /* ViewController.swift */; };
+		CE7463E427CB69AE000634C8 /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7463E327CB69AE000634C8 /* TrackViewController.swift */; };
 		CE7463E727CB69AE000634C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7463E527CB69AE000634C8 /* Main.storyboard */; };
 		CE7463E927CB69B2000634C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7463E827CB69B2000634C8 /* Assets.xcassets */; };
 		CE7463EC27CB69B2000634C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7463EA27CB69B2000634C8 /* LaunchScreen.storyboard */; };
+		CE7463F527CB70DC000634C8 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7463F427CB70DC000634C8 /* Track.swift */; };
+		CE7463FC27CBB08F000634C8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7463FB27CBB08F000634C8 /* NetworkManager.swift */; };
+		CE74640527CD5723000634C8 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74640427CD5723000634C8 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE7463DC27CB69AE000634C8 /* BeatlesApp_json.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeatlesApp_json.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7463DF27CB69AE000634C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE7463E127CB69AE000634C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE7463E327CB69AE000634C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE7463E327CB69AE000634C8 /* TrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewController.swift; sourceTree = "<group>"; };
 		CE7463E627CB69AE000634C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE7463E827CB69B2000634C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE7463EB27CB69B2000634C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE7463ED27CB69B2000634C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE7463F427CB70DC000634C8 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		CE7463FB27CBB08F000634C8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CE74640427CD5723000634C8 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,74 @@
 		CE7463DE27CB69AE000634C8 /* BeatlesApp_json */ = {
 			isa = PBXGroup;
 			children = (
-				CE7463DF27CB69AE000634C8 /* AppDelegate.swift */,
-				CE7463E127CB69AE000634C8 /* SceneDelegate.swift */,
-				CE7463E327CB69AE000634C8 /* ViewController.swift */,
-				CE7463E527CB69AE000634C8 /* Main.storyboard */,
-				CE7463E827CB69B2000634C8 /* Assets.xcassets */,
-				CE7463EA27CB69B2000634C8 /* LaunchScreen.storyboard */,
+				CE7463F827CBAFD3000634C8 /* Storyboards */,
+				CE7463F327CB7094000634C8 /* Models */,
+				CE7463F627CBAF85000634C8 /* ViewControllers */,
+				CE7463FA27CBB057000634C8 /* Networking */,
+				CE7463F727CBAFBA000634C8 /* App */,
+				CE7463F927CBB013000634C8 /* Resources */,
 				CE7463ED27CB69B2000634C8 /* Info.plist */,
 			);
 			path = BeatlesApp_json;
+			sourceTree = "<group>";
+		};
+		CE7463F327CB7094000634C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE7463F427CB70DC000634C8 /* Track.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CE7463F627CBAF85000634C8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE7463E327CB69AE000634C8 /* TrackViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CE7463F727CBAFBA000634C8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CE7463DF27CB69AE000634C8 /* AppDelegate.swift */,
+				CE7463E127CB69AE000634C8 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CE7463F827CBAFD3000634C8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CE7463E527CB69AE000634C8 /* Main.storyboard */,
+				CE7463EA27CB69B2000634C8 /* LaunchScreen.storyboard */,
+				CE74640327CC078F000634C8 /* View */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		CE7463F927CBB013000634C8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE7463E827CB69B2000634C8 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CE7463FA27CBB057000634C8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CE7463FB27CBB08F000634C8 /* NetworkManager.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		CE74640327CC078F000634C8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE74640427CD5723000634C8 /* TableViewCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +203,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE7463E427CB69AE000634C8 /* ViewController.swift in Sources */,
+				CE7463F527CB70DC000634C8 /* Track.swift in Sources */,
+				CE7463E427CB69AE000634C8 /* TrackViewController.swift in Sources */,
+				CE7463FC27CBB08F000634C8 /* NetworkManager.swift in Sources */,
 				CE7463E027CB69AE000634C8 /* AppDelegate.swift in Sources */,
+				CE74640527CD5723000634C8 /* TableViewCell.swift in Sources */,
 				CE7463E227CB69AE000634C8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
