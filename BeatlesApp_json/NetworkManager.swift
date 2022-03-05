@@ -9,7 +9,9 @@ import Foundation
 
 struct NetworkManager {
     
-     static func getDataTrack(
+    static let shared = NetworkManager()
+    
+    func fetchTrack(
         urlString: String,
         completion: @escaping (Result<SearchResponse, Error> ) -> Void) {
             guard let url = URL(string: urlString) else { return }

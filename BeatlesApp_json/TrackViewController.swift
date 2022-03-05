@@ -17,12 +17,18 @@ class TrackViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-
-        NetworkManager.getDataTrack(urlString: Link.urlTrack.rawValue) { (result) in
-            switch result {
+        fetchDataTrack()
+        
+    }
+    
+    private func fetchDataTrack() {
+        NetworkManager.shared.fetchTrack(urlString: Link.urlTrack.rawValue) { result in
+            switch result{
             case .success(let searchResponse):
-                self.tracks = searchResponse
-                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.tracks = searchResponse
+                    self.tableView.reloadData()
+                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
