@@ -21,9 +21,9 @@ struct NetworkManager {
                 
                 if (200...300).contains(statuscode) {
                     guard let value = dataResponse.value else { return }
-                    //print(value)
+                    
                     tracks = Track.getTracks(from: value)
-                    //print(tracks)
+                    
                     
                 } else {
                     completion(.failure(dataResponse.error?.localizedDescription as! Error))
