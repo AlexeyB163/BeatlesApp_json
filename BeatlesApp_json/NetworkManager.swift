@@ -6,37 +6,34 @@
 //
 
 import Foundation
+import Alamofire
 
 struct NetworkManager {
     
-    static let shared = NetworkManager()
+    static var shared = NetworkManager()
     
-    func fetchTrack(
-        urlString: String,
-        completion: @escaping (Result<SearchResponse, Error> ) -> Void) {
-            guard let url = URL(string: urlString) else { return }
-            URLSession.shared.dataTask(with: url) { data, _, error in
+    mutating func fetchTrack(urlString: String, completion: @escaping (Result<[SearchResponse], Error> ) -> Void) {
+        var tracks:[SearchResponse] = []
+        
+        AF.request(Link.urlTrack.rawValue)
+            .responseJSON { dataResponse in
+                guard let statuscode = dataResponse.response?.statusCode else { return }
                 
-                    guard let data = data else {
-                        print(error?.localizedDescription ?? "No description")
-                        completion(.failure(error!))
-                        return
-                    }
-                    do {
-                        let tracks = try JSONDecoder().decode(SearchResponse.self, from: data)
-                        DispatchQueue.main.async {
-                        completion(.success(tracks))
-                        }
-                    } catch let error {
-                        print(error.localizedDescription)
-                        completion(.failure(error))
-                    }
-                
-            }.resume()
-        }
+                if (200...300).contains(statuscode) {
+                    guard let value = dataResponse.value else { return }
+                    //print(value)
+                    tracks = Track.getTracks(from: value)
+                    //print(tracks)
+                    
+                } else {
+                    completion(.failure(dataResponse.error?.localizedDescription as! Error))
+                }
+            
+            }
+    }
     private init() {}
 }
 
 enum Link: String {
-    case urlTrack = "https://itunes.apple.com/search?term=the+beatles&media=music&limit=15"
+    case urlTrack = "https://itunes.apple.com/search?term=the+beatles&media=music&limit=3"
 }

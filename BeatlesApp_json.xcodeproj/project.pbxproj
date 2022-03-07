@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8AABA93E6E26038E0C7059A /* Pods_BeatlesApp_json.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8512B886551FEC42D8EE588E /* Pods_BeatlesApp_json.framework */; };
 		CE7463E027CB69AE000634C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7463DF27CB69AE000634C8 /* AppDelegate.swift */; };
 		CE7463E227CB69AE000634C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7463E127CB69AE000634C8 /* SceneDelegate.swift */; };
 		CE7463E427CB69AE000634C8 /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7463E327CB69AE000634C8 /* TrackViewController.swift */; };
@@ -19,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4DB891F1E35F8F56A0165C86 /* Pods-BeatlesApp_json.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeatlesApp_json.release.xcconfig"; path = "Target Support Files/Pods-BeatlesApp_json/Pods-BeatlesApp_json.release.xcconfig"; sourceTree = "<group>"; };
+		8512B886551FEC42D8EE588E /* Pods_BeatlesApp_json.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeatlesApp_json.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B77F769748863803107CFF9A /* Pods-BeatlesApp_json.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeatlesApp_json.debug.xcconfig"; path = "Target Support Files/Pods-BeatlesApp_json/Pods-BeatlesApp_json.debug.xcconfig"; sourceTree = "<group>"; };
 		CE7463DC27CB69AE000634C8 /* BeatlesApp_json.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeatlesApp_json.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7463DF27CB69AE000634C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE7463E127CB69AE000634C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,17 +41,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8AABA93E6E26038E0C7059A /* Pods_BeatlesApp_json.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2051D71C63ABC2C91CF31654 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B77F769748863803107CFF9A /* Pods-BeatlesApp_json.debug.xcconfig */,
+				4DB891F1E35F8F56A0165C86 /* Pods-BeatlesApp_json.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3792CC7E42D64883E6A5F0A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8512B886551FEC42D8EE588E /* Pods_BeatlesApp_json.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE7463D327CB69AE000634C8 = {
 			isa = PBXGroup;
 			children = (
 				CE7463DE27CB69AE000634C8 /* BeatlesApp_json */,
 				CE7463DD27CB69AE000634C8 /* Products */,
+				2051D71C63ABC2C91CF31654 /* Pods */,
+				3792CC7E42D64883E6A5F0A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,9 +164,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE7463F027CB69B2000634C8 /* Build configuration list for PBXNativeTarget "BeatlesApp_json" */;
 			buildPhases = (
+				5674DAAE03BFC15E766D6E00 /* [CP] Check Pods Manifest.lock */,
 				CE7463D827CB69AE000634C8 /* Sources */,
 				CE7463D927CB69AE000634C8 /* Frameworks */,
 				CE7463DA27CB69AE000634C8 /* Resources */,
+				AF6AD359F2827B513515D53E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -197,6 +224,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5674DAAE03BFC15E766D6E00 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeatlesApp_json-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF6AD359F2827B513515D53E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeatlesApp_json/Pods-BeatlesApp_json-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeatlesApp_json/Pods-BeatlesApp_json-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeatlesApp_json/Pods-BeatlesApp_json-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE7463D827CB69AE000634C8 /* Sources */ = {
@@ -352,6 +421,7 @@
 		};
 		CE7463F127CB69B2000634C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B77F769748863803107CFF9A /* Pods-BeatlesApp_json.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -379,6 +449,7 @@
 		};
 		CE7463F227CB69B2000634C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DB891F1E35F8F56A0165C86 /* Pods-BeatlesApp_json.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
