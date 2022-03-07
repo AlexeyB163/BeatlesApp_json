@@ -33,19 +33,17 @@ struct Track: Codable {
         primaryGenreName = trackData["primaryGenreName"] as? String
     }
     
-    static func getTracks(from value: Any) -> [SearchResponse] {
+    static func getTracks(from value: Any) -> [Track] {
         
-        guard let tracksData = value as? [String : Any] else {
-            print("trackData error")
-            return [] }
-        var tracks:[SearchResponse] = []
+        guard let value = value as? [String : Any] else { return [] }
+        guard let results = value["results"] as? [[String : Any]] else { return [] }
         
-        for track in tracksData {
-            let track = Track(trackData: track)
+        var tracks:[Track] = []
+        
+        for result in results {
+            let track = Track(trackData: result)
             tracks.append(track)
         }
-
-        
         return tracks
     }
 }
